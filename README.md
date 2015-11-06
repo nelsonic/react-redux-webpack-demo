@@ -4,7 +4,7 @@ This repo requires a basic understanding of both react and webpack, if you are n
 
 ### TODO
 
-[ ] - Start using webpack server as well as hot-loader
-[ ] - Create a basic react set up and then impement a small redux reducer
-[ ] - Tests are key write tests for everything including e2e using night watch
-[ ] - Write a brief break down on redux/ night watch / and jsdoa 'a'
+- [ ] Start using webpack server as well as hot-loader
+- [ ] - Create a basic react set up and then impement a small redux reducer
+- [ ] - Tests are key write tests for everything including e2e using night watch
+- [ ] - Write a brief break down on redux/ night watch / and jsdoa 'a'
