@@ -1,0 +1,23 @@
+.mainContainer {
+  margin: 0 auto;
+  text-align: center;
+  width: 900px;
+}
+
+.productContainer {
+  float: left;
+}
+
+.productContainer img {
+  max-width: 200px;
+  max-height: 250px;
+}
+
+.shoppingContainer {
+  border: solid;
+  width: 30%;
+  float: right;
+  max-height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}

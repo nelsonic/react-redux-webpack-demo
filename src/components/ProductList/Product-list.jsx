@@ -1,8 +1,6 @@
-import styles from './product-list.css'
 import React from 'react'
-import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
-import actions from '../../actions/shopping-actions.js'
+import * as actions from '../../actions/shopping-actions.js'
 
 class ProductList extends React.Component {
   constructor() {
@@ -12,14 +10,14 @@ class ProductList extends React.Component {
   render() {
    const { products, add } = this.props
    return (
-     <div className={ styles.container }>
+     <div className='productContainer'>
       {
         products.map((product, i) =>
           (
-          <div key={ i }>
-            <img onClick={ add.bind(null, product) } src={ '../../data/images/' + product.imageSource }/>
+          <div className='productContainer' key={ i }>
+            <img className='productImg' onClick={ add.bind(null, product) } src={ '../../data/images/' + product.imageSource }/>
             <h2>{ product.name }</h2>
-            <h2>{ product.price }</h2>
+            <h2>£ { product.price }</h2>
           </div>
           )
         )
@@ -31,7 +29,7 @@ class ProductList extends React.Component {
 
 function mapDispatchToProps(dispatch) {
   return {
-    add: (item) => dispatch(actions(item))
+    add: (item) => dispatch(actions.add(item))
   }
 }
 

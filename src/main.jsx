@@ -4,6 +4,7 @@ import App from './components/App/App.jsx'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import shoppingReducer from './reducers/shopping-reducer.js'
+if (process.browser) require('./main.css')
 
 let store = createStore(shoppingReducer)
 
