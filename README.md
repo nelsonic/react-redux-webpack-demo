@@ -8,7 +8,7 @@ This repo requires a basic understanding of both react and webpack, if you are n
 * Install webpack by running `npm install -g webpack`.
 * cd into the project directory and run `npm install`.
 * Run `webpack` to compile all of the assets. (If you get any errors during this process, make sure that you're running Node version 4.2.1)
-* Tests can be run using the `npm test` command.
+* Tests can be run using the `npm run unit:test` command or `npm run e2e:test`.
 * To start the server, run `npm start`, you can then view the homepage at (http://localhost:8080)
 
 ## React
@@ -41,8 +41,17 @@ Redux consists of the following components to make this work:
 
 ## Tests
 
+#### Unit 
 We have implemented several unit tests for this application using [tape](https://github.com/substack/tape). Each of these tests can be found in the `/tests/unit` folder.
 We currently have three test files:
 * `component.js`: This file implements several `jsdom` tests. These unit tests ensure that the UI is updated correctly when a product has been added/removed from the shopping cart.
 * `reducers.js`: This file tests the `add` and `remove` functions defined in our Redux reducer. It mocks a simple product object and ensures that the Redux stores are updated correctly when adding or removing a product.
 * `utils.js`: This tests a `group by` utility function located in `/src/lib/group-by.js`.
+
+#### e2e
+For e2e testing we have used [Nightwatch.js](http://nightwatchjs.org) which utilises [Selenium server](http://www.seleniumhq.org) as well as a built in testrunner to run in browser testing.
+Here are a few things that you might need to know:
+* Selenium creates a java server so ensure that java is installed on your machine.
+* The Nightwatch tests the app by going to  (http://localhost:8080) so make sure the app is running before running the e2e tests.
+
+
