@@ -1,7 +1,7 @@
-import styles from './shopping-cart.css'
 import React from 'react'
-import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
+import groupBy from '../../lib/group-by.js'
+import * as actions from '../../actions/shopping-actions.js'
 
 class ShoppingCart extends React.Component {
   constructor() {
@@ -9,26 +9,28 @@ class ShoppingCart extends React.Component {
   }
 
   render() {
-   const { products } = this.props
+   const { products, remove } = this.props
+   const groupedProducts = groupBy(products, 'name')
    const totalPrice = products.reduce((previous, current) => { return previous + current.price }, 0)
    return (
-     <div className={ styles.container }>
+     <div className= 'shoppingContainer'>
       {
-        products.map((product, i) =>
+        groupedProducts.map((product, i) =>
           (
           <div key={ i }>
             <h2>{ product.name }</h2>
-            <h2>{ product.price }</h2>
+            <h2>£ { product.price }</h2>
+            <h2>Quantity: { product.index.length }</h2>
+            <button className="removeFromCartBtn" onClick= { remove.bind(null, product.index[0] )}> - </button>
           </div>
           )
         )
       }
-      <h2>Total: <b> { totalPrice } </b></h2>
+      <h2>Total: <b>£ { totalPrice } </b></h2>
      </div>
    )
   }
 }
-
 
 function mapStateToProps(state) {
   return {
@@ -36,6 +38,13 @@ function mapStateToProps(state) {
   }
 }
 
+function mapDispatchToProps(dispatch) {
+  return {
+    remove: (index) => dispatch(actions.remove(index))
+  }
+}
+
 export default connect (
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(ShoppingCart)

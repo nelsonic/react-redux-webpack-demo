@@ -1,4 +1,3 @@
-import styles from './app.css'
 import React from 'react'
 import ShoppingCart from '../ShoppingCart/Shopping-cart.jsx'
 import ProductList from '../ProductList/Product-list.jsx'
@@ -11,7 +10,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className={styles.maincontainer}>
+      <div className='mainContainer'>
         <ProductList products={ productData }/>
         <ShoppingCart addedProducts={ productData }/>
       </div>

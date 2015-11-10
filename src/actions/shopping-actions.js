@@ -1,9 +1,14 @@
 
-const add = (item) => {
+export function add (item) {
   return {
     type: 'ADD',
     item: item
   }
 }
 
-export default add
+export function remove (index) {
+  return {
+    type: 'REMOVE',
+    index: index
+  }
+}

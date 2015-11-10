@@ -7,5 +7,5 @@ const initialState = Immutable.List()
  **/
 export default createReducer(initialState, {
   ADD: (state, { item }) => state.push(item),
-  REMOVE: (state, { item }) => state
+  REMOVE: (state, { index }) => state.delete(index)
 })
