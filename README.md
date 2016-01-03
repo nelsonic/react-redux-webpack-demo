@@ -8,7 +8,7 @@ This applications makes use of the following frameworks to implement the require
 
 * <b>React</b> is used as it offers performance and re-usable components. Components are visual and non-visual code snippets that can be re-used throughout the entire application. React also handles all of the user interface updates throughout each component. For more information, please see the [React documentation](https://facebook.github.io/react/docs/getting-started.html)
 
-* <b>Redux</b> is great to use as it offers many of the features of Flux (such as data immutability and unidirectional data flow) but takes a more simple approach. It also works well with React for keeping track of the application's state. For more information, please see the [Redux documentation](http://redux.js.org/)
+* <b>Redux</b> is great to use as it offers many of the features of Flux (such as data immutability, through [Immutable](https://facebook.github.io/immutable-js), and unidirectional data flow) but takes a more simple approach. It also works well with React for keeping track of the application's state. For more information, please see the [Redux documentation](http://redux.js.org/)
 
 * <b>Webpack</b> was chosen over browserify as it does most of the build process automatically (pre-processing, minifying, linting and building files) whereas to do this in browserify may require more configuration and third-party modules such as Gulp. It also supports hot reloading which automatically reloads the app when files are updated. For more information, please see the [Webpack documentation](http://webpack.github.io/docs/)
 
